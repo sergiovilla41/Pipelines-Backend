@@ -7,17 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted  # Utiliza el runner auto-hospedado (local)
-
-    services:
-      docker:
-        image: docker:19.03.12
-        options: --privileged
-        ports:
-          - 3131:3030
-          - 8181:8080
-          - 5543:5432
-          - 27019:27017
+    runs-on: self-hosted  # Utiliza el runner auto-hospedado en WSL 2
 
     steps:
     - name: Checkout code

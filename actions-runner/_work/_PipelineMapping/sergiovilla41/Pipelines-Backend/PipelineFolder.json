@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "sergiovilla41/Pipelines-Backend",
+  "pipelineDirectory": "Pipelines-Backend",
+  "workspaceDirectory": "Pipelines-Backend\\Pipelines-Backend",
+  "repositories": {
+    "sergiovilla41/Pipelines-Backend": {
+      "repositoryPath": "Pipelines-Backend\\Pipelines-Backend",
+      "lastRunOn": "06/02/2024 20:57:38 -05:00"
+    }
+  },
+  "lastRunOn": "06/02/2024 20:57:38 -05:00"
+}
