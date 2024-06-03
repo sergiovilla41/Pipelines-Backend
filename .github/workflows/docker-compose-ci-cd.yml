@@ -9,6 +9,17 @@ jobs:
   build:
     runs-on: self-hosted  # Utiliza el runner auto-hospedado en Windows
 
+    services:
+      docker:
+        image: docker:19.03.12
+        options: --privileged
+        ports:
+          
+          - 4141:4040
+          - 8181:8080
+          - 8843:5432
+          - 27019:27017
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -26,16 +37,13 @@ jobs:
 
     - name: Build and push Docker images
       run: |
-        docker-compose -f docker-compose.yml build
-        docker-compose -f docker-compose.yml push
-      shell: powershell
+        docker-compose -f path/to/your/docker-compose.yml build
+        docker-compose -f path/to/your/docker-compose.yml push
 
     - name: Run Docker Compose
       run: |
-        docker-compose -f docker-compose.yml up -d
-      shell: powershell
+        docker-compose -f path/to/your/docker-compose.yml up -d
 
     - name: Check Docker Containers
       run: |
         docker ps -a
-      shell: powershell
