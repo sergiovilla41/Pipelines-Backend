@@ -6,4 +6,4 @@ COPY ./scripts/DML-CalendarioLaboral.sql /docker-entrypoint-initdb.d/
 
 
 
-EXPOSE 5543
+EXPOSE 5432
