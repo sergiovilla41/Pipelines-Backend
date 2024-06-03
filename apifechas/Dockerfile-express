@@ -1,0 +1,20 @@
+# Usar una imagen de Node.js como base
+FROM node:21
+
+# Crear carpeta para la aplicación 
+WORKDIR /usr/src/app/
+
+# Se copian los archivos de configuración necesarios
+COPY package*.json ./
+
+# Instalar dependencias dentro de la carpeta apifechas
+RUN npm install
+
+# Copiar el código fuente de la aplicación completo 
+COPY . .
+
+# Exponer el puerto donde correrá la aplicación 
+EXPOSE 3131 
+
+# Comando para ejecutar la aplicación 
+CMD [ "node", "app.js" ]

@@ -1,0 +1,21 @@
+# Usa la imagen oficial de MongoDB como base
+FROM mongo:latest
+
+# Crea el directorio para los scripts de inicialización
+RUN mkdir -p /docker-entrypoint-initdb.d
+
+# Copia el script de inicialización al contenedor
+COPY ./mongo-init/init.js /docker-entrypoint-initdb.d/
+COPY ./mongo-init/data.js /docker-entrypoint-initdb.d/
+
+# Copia el script de Mongosh al directorio de inicialización
+COPY ./mongo-init/initData.js /docker-entrypoint-initdb.d/
+
+# Asegura que el script tenga permisos de ejecución (si es necesario)
+# RUN chmod +x /docker-entrypoint-initdb.d/initData.js
+
+# Exponer el puerto predeterminado de MongoDB
+EXPOSE 27019
+
+# Configura el comando predeterminado para ejecutar MongoDB
+CMD ["mongod"]

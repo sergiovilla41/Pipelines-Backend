@@ -1,0 +1,9 @@
+FROM postgres:16.3
+
+# Copiar los scripts SQL al contenedor
+COPY ./scripts/DDL-CalendarioLaboral.sql /docker-entrypoint-initdb.d/
+COPY ./scripts/DML-CalendarioLaboral.sql /docker-entrypoint-initdb.d/
+
+
+
+EXPOSE 5543
