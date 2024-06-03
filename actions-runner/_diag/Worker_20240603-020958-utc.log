@@ -1,0 +1,3382 @@
+[2024-06-03 02:09:58Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2024-06-03 02:09:58Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:58Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:58Z INFO HostContext] Well known config file 'Credentials': 'D:\Temporal\Api-Calendario\actions-runner\.credentials'
+[2024-06-03 02:09:58Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:58Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:58Z INFO HostContext] Well known config file 'Runner': 'D:\Temporal\Api-Calendario\actions-runner\.runner'
+[2024-06-03 02:09:58Z INFO Worker] Version: 2.316.1
+[2024-06-03 02:09:58Z INFO Worker] Commit: 9ac138d10eac15c71493f004f1b1bc919ead40de
+[2024-06-03 02:09:58Z INFO Worker] Culture: es-CO
+[2024-06-03 02:09:58Z INFO Worker] UI Culture: es-MX
+[2024-06-03 02:09:58Z INFO Worker] Waiting to receive the job message from the channel.
+[2024-06-03 02:09:58Z INFO ProcessChannel] Receiving message of length 25081, with hash '9c7074e5f9d366aac173dd0454641758acf2d9f131594275d893ad36203fb146'
+[2024-06-03 02:09:58Z INFO Worker] Message received.
+[2024-06-03 02:09:58Z INFO Worker] Job message:
+ {
+  "fileTable": [
+    ".github/workflows/docker-compose-ci-cd.yml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/checkout",
+        "ref": "v2",
+        "repositoryType": "GitHub",
+        "path": ""
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 13,
+        "col": 13,
+        "lit": "Checkout code"
+      },
+      "contextName": "__actions_checkout",
+      "condition": "success()",
+      "id": "a60052d4-79a0-5821-3eeb-84adb9872c5b",
+      "name": "__actions_checkout"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "docker/setup-buildx-action",
+        "ref": "v1",
+        "repositoryType": "GitHub",
+        "path": ""
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 16,
+        "col": 13,
+        "lit": "Set up Docker Buildx"
+      },
+      "contextName": "__docker_setup-buildx-action",
+      "condition": "success()",
+      "id": "af0f9b08-3e38-5cdb-58f3-8ba5b02a7767",
+      "name": "__docker_setup-buildx-action"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "docker/login-action",
+        "ref": "v2",
+        "repositoryType": "GitHub",
+        "path": ""
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 20,
+        "col": 13,
+        "lit": "Log in to DockerHub"
+      },
+      "contextName": "__docker_login-action",
+      "inputs": {
+        "type": 2,
+        "file": 1,
+        "line": 23,
+        "col": 9,
+        "map": [
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 23,
+              "col": 9,
+              "lit": "username"
+            },
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 23,
+              "col": 19,
+              "expr": "secrets.DOCKER_HUB_USERNAME"
+            }
+          },
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 24,
+              "col": 9,
+              "lit": "password"
+            },
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 24,
+              "col": 19,
+              "expr": "secrets.DOCKER_HUB_ACCESS_TOKEN"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "bf2735f0-983a-5efe-3e1d-8628655b929e",
+      "name": "__docker_login-action"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 29,
+        "col": 13,
+        "lit": "Run Docker Compose"
+      },
+      "contextName": "__run",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 30,
+              "col": 12,
+              "lit": "docker-compose -f docker-compose.yml up -d\n"
+            }
+          },
+          {
+            "key": "shell",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 32,
+              "col": 14,
+              "lit": "powershell"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "dd23db01-cff6-57a4-373a-5c8097a97333",
+      "name": "__run"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 34,
+        "col": 13,
+        "lit": "Check Docker Containers"
+      },
+      "contextName": "__run_2",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 35,
+              "col": 12,
+              "lit": "docker ps -a\n"
+            }
+          },
+          {
+            "key": "shell",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 37,
+              "col": 14,
+              "lit": "powershell"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "87b991c0-db8a-593e-4233-d8a37f15e4c9",
+      "name": "__run_2"
+    }
+  ],
+  "variables": {
+    "DOCKER_HUB_ACCESS_TOKEN": {
+      "value": "***",
+      "isSecret": true
+    },
+    "DOCKER_HUB_USERNAME": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.isScheduled": {
+      "value": "False"
+    },
+    "system.servertype": {
+      "value": "Hosted"
+    },
+    "system.culture": {
+      "value": ""
+    },
+    "system.pipelineStartTime": {
+      "value": "2024-06-03 02:09:55+00:00"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.EnableCompositeActions": {
+      "value": "true"
+    },
+    "DistributedTask.EnhancedAnnotations": {
+      "value": "true"
+    },
+    "DistributedTask.UploadStepSummary": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode16": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode12Action": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode16Action": {
+      "value": "true"
+    },
+    "DistributedTask.LogTemplateErrorsAsDebugMessages": {
+      "value": "true"
+    },
+    "DistributedTask.AllowRunnerContainerHooks": {
+      "value": "true"
+    },
+    "DistributedTask.DeprecateStepOutputCommands": {
+      "value": "true"
+    },
+    "DistributedTask.UseWhich2": {
+      "value": "true"
+    },
+    "DistributedTask.DetailUntarFailure": {
+      "value": "true"
+    },
+    "DistributedTask.UseActionArchiveCache": {
+      "value": "true"
+    },
+    "DistributedTask.EnableJobServerQueueTelemetry": {
+      "value": "true"
+    },
+    "DistributedTask.MarkJobAsFailedOnWorkerCrash": {
+      "value": "true"
+    },
+    "Actions.EnableHttpRedirects": {
+      "value": "true"
+    },
+    "system.teamProjectId": {
+      "value": "00000000-0000-0000-0000-000000000000"
+    },
+    "build.buildId": {
+      "value": "7"
+    },
+    "build.containerId": {
+      "value": "14904082"
+    },
+    "system.workflowFilePath": {
+      "value": ".github/workflows/docker-compose-ci-cd.yml"
+    },
+    "system.phaseDisplayName": {
+      "value": "build"
+    },
+    "system.phaseId": {
+      "value": "6884a131-87da-5381-61f3-d7acc3b91d76"
+    },
+    "system.phaseName": {
+      "value": "build"
+    },
+    "system.phaseAttempt": {
+      "value": "1"
+    },
+    "system.jobIdentifier": {
+      "value": "build.__default"
+    },
+    "system.jobAttempt": {
+      "value": "1"
+    },
+    "System.JobPositionInPhase": {
+      "value": "1"
+    },
+    "System.TotalJobsInPhase": {
+      "value": "1"
+    },
+    "system.github.job": {
+      "value": "build"
+    },
+    "system.jobDisplayName": {
+      "value": "build"
+    },
+    "system.jobId": {
+      "value": "ca395085-040a-526b-2ce8-bdc85f692774"
+    },
+    "system.jobName": {
+      "value": "__default"
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Contents\":\"read\",\"Metadata\":\"read\",\"Packages\":\"read\"}"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.runnerEnvironment": {
+      "value": "self-hosted"
+    },
+    "system.github.results_endpoint": {
+      "value": "https://results-receiver.actions.githubusercontent.com/"
+    },
+    "system.github.results_upload_with_sdk": {
+      "value": "True"
+    },
+    "system.orchestrationId": {
+      "value": "9e659085-acea-4adb-a24b-a226948421c9.build.__default"
+    },
+    "system.runnerGroupName": {
+      "value": "Default"
+    }
+  },
+  "messageType": "PipelineAgentJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "Actions",
+    "version": 41,
+    "planId": "9e659085-acea-4adb-a24b-a226948421c9",
+    "planGroup": "Actions:00000000-0000-0000-0000-000000000000:1",
+    "artifactUri": "vstfs:///Build/Build/7",
+    "artifactLocation": null,
+    "definition": {
+      "_links": {},
+      "id": 3,
+      "name": "Pipelines-Backend"
+    },
+    "owner": {
+      "_links": {},
+      "id": 3,
+      "name": "***"
+    }
+  },
+  "timeline": {
+    "id": "9e659085-acea-4adb-a24b-a226948421c9",
+    "changeId": 0,
+    "location": null
+  },
+  "jobId": "ca395085-040a-526b-2ce8-bdc85f692774",
+  "jobDisplayName": "build",
+  "jobName": "__default",
+  "requestId": 7,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "0bac1adb-09f6-445d-a876-71fc26fd7dfd",
+          "ServerName": "MvxJeozB7iwIkriCYJDX9A1lZqkLGg8nGQjKLrTD2Ey96xIOB1",
+          "CacheServerUrl": "https://acghubeus1.actions.githubusercontent.com/MvxJeozB7iwIkriCYJDX9A1lZqkLGg8nGQjKLrTD2Ey96xIOB1/",
+          "FeedStreamUrl": "https://results-receiver.actions.githubusercontent.com/_ws/ingest.sock",
+          "ResultsServiceUrl": "https://results-receiver.actions.githubusercontent.com/",
+          "ConnectivityChecks": "[\"https://acghubeus0.actions.githubusercontent.com/_apis/health\",\"https://results-receiver.actions.githubusercontent.com/health\",\"https://actions-results-receiver-production.githubapp.com/health\",\"https://pipelinesghubeus14.actions.githubusercontent.com/_apis/health\"]"
+        },
+        "name": "SystemVssConnection",
+        "url": "https://pipelinesghubeus14.actions.githubusercontent.com/MvxJeozB7iwIkriCYJDX9A1lZqkLGg8nGQjKLrTD2Ey96xIOB1/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": ***
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/main"
+        },
+        {
+          "k": "sha",
+          "v": "62c092a0a9fd76b7d02d3c9eb7128150bd38d0a1"
+        },
+        {
+          "k": "repository",
+          "v": "***/Pipelines-Backend"
+        },
+        {
+          "k": "repository_owner",
+          "v": "***"
+        },
+        {
+          "k": "repository_owner_id",
+          "v": "115543974"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/***/Pipelines-Backend.git"
+        },
+        {
+          "k": "run_id",
+          "v": "9343194412"
+        },
+        {
+          "k": "run_number",
+          "v": "7"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "run_attempt",
+          "v": "1"
+        },
+        {
+          "k": "artifact_cache_size_limit",
+          "v": "10"
+        },
+        {
+          "k": "repository_visibility",
+          "v": "public"
+        },
+        {
+          "k": "repo-self-hosted-runners-disabled",
+          "v": false
+        },
+        {
+          "k": "enterprise-managed-business-id",
+          "v": ""
+        },
+        {
+          "k": "repository_id",
+          "v": "809548146"
+        },
+        {
+          "k": "actor_id",
+          "v": "115543974"
+        },
+        {
+          "k": "actor",
+          "v": "***"
+        },
+        {
+          "k": "triggering_actor",
+          "v": "***"
+        },
+        {
+          "k": "workflow",
+          "v": "Docker Compose CI/CD"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "push"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "after",
+                "v": "62c092a0a9fd76b7d02d3c9eb7128150bd38d0a1"
+              },
+              {
+                "k": "base_ref",
+                "v": null
+              },
+              {
+                "k": "before",
+                "v": "8a86adf719a08f4e692d4fa24991f0825b55e867"
+              },
+              {
+                "k": "commits",
+                "v": {
+                  "t": 1,
+                  "a": [
+                    {
+                      "t": 2,
+                      "d": [
+                        {
+                          "k": "author",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "serfusion41@gmail.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "***"
+                              },
+                              {
+                                "k": "username",
+                                "v": "***"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "committer",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "serfusion41@gmail.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "***"
+                              },
+                              {
+                                "k": "username",
+                                "v": "***"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "distinct",
+                          "v": true
+                        },
+                        {
+                          "k": "id",
+                          "v": "62c092a0a9fd76b7d02d3c9eb7128150bd38d0a1"
+                        },
+                        {
+                          "k": "message",
+                          "v": "commit -7"
+                        },
+                        {
+                          "k": "timestamp",
+                          "v": "2024-06-02T21:09:48-05:00"
+                        },
+                        {
+                          "k": "tree_id",
+                          "v": "802d2abb2db0665c8340d548efafd60a94418f0e"
+                        },
+                        {
+                          "k": "url",
+                          "v": "https://github.com/***/Pipelines-Backend/commit/62c092a0a9fd76b7d02d3c9eb7128150bd38d0a1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "compare",
+                "v": "https://github.com/***/Pipelines-Backend/compare/8a86adf719a0...62c092a0a9fd"
+              },
+              {
+                "k": "created",
+                "v": false
+              },
+              {
+                "k": "deleted",
+                "v": false
+              },
+              {
+                "k": "forced",
+                "v": false
+              },
+              {
+                "k": "head_commit",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "author",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "serfusion41@gmail.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "***"
+                          },
+                          {
+                            "k": "username",
+                            "v": "***"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "committer",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "serfusion41@gmail.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "***"
+                          },
+                          {
+                            "k": "username",
+                            "v": "***"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "distinct",
+                      "v": true
+                    },
+                    {
+                      "k": "id",
+                      "v": "62c092a0a9fd76b7d02d3c9eb7128150bd38d0a1"
+                    },
+                    {
+                      "k": "message",
+                      "v": "commit -7"
+                    },
+                    {
+                      "k": "timestamp",
+                      "v": "2024-06-02T21:09:48-05:00"
+                    },
+                    {
+                      "k": "tree_id",
+                      "v": "802d2abb2db0665c8340d548efafd60a94418f0e"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/***/Pipelines-Backend/commit/62c092a0a9fd76b7d02d3c9eb7128150bd38d0a1"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "pusher",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "email",
+                      "v": "sergiogallego307270@correo.itm.edu.co"
+                    },
+                    {
+                      "k": "name",
+                      "v": "***"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "ref",
+                "v": "refs/heads/main"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "allow_forking",
+                      "v": true
+                    },
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/***/Pipelines-Backend.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": 1717378186.0
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": null
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": false
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "***/Pipelines-Backend"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/***/Pipelines-Backend.git"
+                    },
+                    {
+                      "k": "has_discussions",
+                      "v": false
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": true
+                    },
+                    {
+                      "k": "homepage",
+                      "v": null
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/***/Pipelines-Backend"
+                    },
+                    {
+                      "k": "id",
+                      "v": 809548146.0
+                    },
+                    {
+                      "k": "is_template",
+                      "v": false
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": "JavaScript"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": null
+                    },
+                    {
+                      "k": "master_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "Pipelines-Backend"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "R_kgDOMEC5cg"
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/115543974?v=4"
+                          },
+                          {
+                            "k": "email",
+                            "v": "sergiogallego307270@correo.itm.edu.co"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/***/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/***/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/***/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/***/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/***"
+                          },
+                          {
+                            "k": "id",
+                            "v": 115543974.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "***"
+                          },
+                          {
+                            "k": "name",
+                            "v": "***"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "U_kgDOBuMPpg"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/***/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/***/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/***/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/***/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/***/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/***"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": false
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": 1717380592.0
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:***/Pipelines-Backend.git"
+                    },
+                    {
+                      "k": "stargazers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/***/Pipelines-Backend"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/teams"
+                    },
+                    {
+                      "k": "topics",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/***/Pipelines-Backend/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2024-06-03T02:07:55Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/***/Pipelines-Backend"
+                    },
+                    {
+                      "k": "visibility",
+                      "v": "public"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "web_commit_signoff_required",
+                      "v": false
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/115543974?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/***/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/***/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/***/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/***/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/***"
+                    },
+                    {
+                      "k": "id",
+                      "v": 115543974.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "***"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "U_kgDOBuMPpg"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/***/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/***/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/***/repos"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/***/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/***/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/***"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        },
+        {
+          "k": "ref_name",
+          "v": "main"
+        },
+        {
+          "k": "ref_protected",
+          "v": false
+        },
+        {
+          "k": "ref_type",
+          "v": "branch"
+        },
+        {
+          "k": "secret_source",
+          "v": "Actions"
+        },
+        {
+          "k": "workflow_ref",
+          "v": "***/Pipelines-Backend/.github/workflows/docker-compose-ci-cd.yml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "62c092a0a9fd76b7d02d3c9eb7128150bd38d0a1"
+        }
+      ]
+    },
+    "run-feature-flags": {
+      "t": 2,
+      "d": [
+        {
+          "k": "actions_stream_logs_via_results_service",
+          "v": true
+        },
+        {
+          "k": "actions_use_results_service",
+          "v": true
+        },
+        {
+          "k": "larger_runners_custom_image_generation",
+          "v": false
+        }
+      ]
+    },
+    "partialrerun": false,
+    "needs": {
+      "t": 2
+    },
+    "vars": null,
+    "inputs": {
+      "t": 2
+    },
+    "matrix": null,
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 1.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 1.0
+        }
+      ]
+    },
+    "EndpointsOverride": null
+  }
+}
+[2024-06-03 02:09:58Z INFO JobRunner] Job ID ca395085-040a-526b-2ce8-bdc85f692774
+[2024-06-03 02:09:58Z INFO ConfigurationStore] currentAssemblyLocation: D:\Temporal\Api-Calendario\actions-runner\bin\Runner.Worker.dll
+[2024-06-03 02:09:58Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:58Z INFO ConfigurationStore] binPath: D:\Temporal\Api-Calendario\actions-runner\bin
+[2024-06-03 02:09:58Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:58Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:58Z INFO ConfigurationStore] RootFolder: D:\Temporal\Api-Calendario\actions-runner
+[2024-06-03 02:09:58Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:58Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:58Z INFO HostContext] Well known config file 'Runner': 'D:\Temporal\Api-Calendario\actions-runner\.runner'
+[2024-06-03 02:09:58Z INFO ConfigurationStore] ConfigFilePath: D:\Temporal\Api-Calendario\actions-runner\.runner
+[2024-06-03 02:09:58Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:58Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:58Z INFO HostContext] Well known config file 'Credentials': 'D:\Temporal\Api-Calendario\actions-runner\.credentials'
+[2024-06-03 02:09:58Z INFO ConfigurationStore] CredFilePath: D:\Temporal\Api-Calendario\actions-runner\.credentials
+[2024-06-03 02:09:58Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:58Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:58Z INFO HostContext] Well known config file 'MigratedCredentials': 'D:\Temporal\Api-Calendario\actions-runner\.credentials_migrated'
+[2024-06-03 02:09:58Z INFO ConfigurationStore] MigratedCredFilePath: D:\Temporal\Api-Calendario\actions-runner\.credentials_migrated
+[2024-06-03 02:09:58Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:58Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:58Z INFO HostContext] Well known config file 'Service': 'D:\Temporal\Api-Calendario\actions-runner\.service'
+[2024-06-03 02:09:58Z INFO ConfigurationStore] ServiceConfigFilePath: D:\Temporal\Api-Calendario\actions-runner\.service
+[2024-06-03 02:09:58Z INFO ConfigurationStore] Read setting file: 321 chars
+[2024-06-03 02:09:58Z INFO JobRunner] Creating job server with URL: https://pipelinesghubeus14.actions.githubusercontent.com/MvxJeozB7iwIkriCYJDX9A1lZqkLGg8nGQjKLrTD2Ey96xIOB1/
+[2024-06-03 02:09:59Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2024-06-03 02:09:59Z INFO Worker] Listening for cancel message from the channel.
+[2024-06-03 02:09:59Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2024-06-03 02:09:59Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2024-06-03 02:09:59Z INFO JobServer] Creating websocket client ...wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock
+[2024-06-03 02:09:59Z INFO JobServer] Attempting to start websocket client with delay 00:00:00.
+[2024-06-03 02:09:59Z INFO JobServerQueue] Initializing results client
+[2024-06-03 02:09:59Z INFO JobServerQueue] Start process web console line queue.
+[2024-06-03 02:09:59Z INFO JobServerQueue] Start process file upload queue.
+[2024-06-03 02:09:59Z INFO JobServerQueue] Start results file upload queue.
+[2024-06-03 02:09:59Z INFO JobServerQueue] Starting results-based upload queue...
+[2024-06-03 02:09:59Z INFO JobServerQueue] Start process timeline update queue.
+[2024-06-03 02:09:59Z INFO ExecutionContext] Initialize GitHub context
+[2024-06-03 02:09:59Z INFO ExecutionContext] Initialize Env context
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Diag': 'D:\Temporal\Api-Calendario\actions-runner\_diag'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Diag': 'D:\Temporal\Api-Calendario\actions-runner\_diag'
+[2024-06-03 02:09:59Z INFO JobRunner] Starting the job execution context.
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:09:59Z INFO JobRunner] Validating directory permissions for: 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Tools': 'D:\Temporal\Api-Calendario\actions-runner\_work\_tool'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Temp': 'D:\Temporal\Api-Calendario\actions-runner\_work\_temp'
+[2024-06-03 02:09:59Z INFO JobRunner] Getting job extension.
+[2024-06-03 02:09:59Z INFO JobRunner] Initialize job. Getting all job steps.
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Diag': 'D:\Temporal\Api-Calendario\actions-runner\_diag'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Diag': 'D:\Temporal\Api-Calendario\actions-runner\_diag'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:59Z INFO HostContext] Well known config file 'Credentials': 'D:\Temporal\Api-Calendario\actions-runner\.credentials'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:59Z INFO HostContext] Well known config file 'SetupInfo': 'D:\Temporal\Api-Calendario\actions-runner\.setup_info'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:09:59Z INFO PipelineDirectoryManager] Loading tracking config if exists: D:\Temporal\Api-Calendario\actions-runner\_work\_PipelineMapping\***/Pipelines-Backend\PipelineFolder.json
+[2024-06-03 02:09:59Z INFO PipelineDirectoryManager] Updating job run properties.
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:09:59Z INFO JobExtension] Downloading actions
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:09:59Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:09:59Z INFO JobServer] Successfully started websocket client.
+[2024-06-03 02:09:59Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'fb440901-e679-4d7a-ac6a-fa518182f4b1', success rate: 1/1.
+[2024-06-03 02:10:00Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:00Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:00Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:00Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:00Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:00Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:00Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:00Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:00Z INFO ActionManager] Save archive 'https://api.github.com/repos/actions/checkout/zipball/ee0669bd1cc54295c223e0bb666b733df41de1c5' into D:\Temporal\Api-Calendario\actions-runner\_work\_actions\_temp_284aeb51-f2ac-42ea-97fb-47e74b4236a9\5d9f5bba-b4d2-4cd8-a167-a6083d93b48a.zip.
+[2024-06-03 02:10:00Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'fb440901-e679-4d7a-ac6a-fa518182f4b1', success rate: 1/1.
+[2024-06-03 02:10:00Z INFO JobServerQueue] Job timeline record has been updated for the first time.
+[2024-06-03 02:10:01Z INFO ActionManager] Request URL: https://api.github.com/repos/actions/checkout/zipball/ee0669bd1cc54295c223e0bb666b733df41de1c5 X-GitHub-Request-Id: 05D3:67FEE:649D44:9A6359:665D25F8 Http Status: OK
+[2024-06-03 02:10:01Z INFO ActionManager] Finished getting action repository.
+[2024-06-03 02:10:01Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:01Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:01Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:01Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:01Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:01Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:01Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:01Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:01Z INFO ActionManager] Save archive 'https://api.github.com/repos/docker/setup-buildx-action/zipball/f211e3e9ded2d9377c8cadc4489a4e38014bc4c9' into D:\Temporal\Api-Calendario\actions-runner\_work\_actions\_temp_f35ba016-87b1-4f7c-ae48-e61f2cebbb78\32392e87-d55f-4fdf-b59d-fbb245e48beb.zip.
+[2024-06-03 02:10:01Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'fb440901-e679-4d7a-ac6a-fa518182f4b1', success rate: 1/1.
+[2024-06-03 02:10:02Z INFO ActionManager] Request URL: https://api.github.com/repos/docker/setup-buildx-action/zipball/f211e3e9ded2d9377c8cadc4489a4e38014bc4c9 X-GitHub-Request-Id: 05D5:169A:41CAEC:67425A:665D25FA Http Status: OK
+[2024-06-03 02:10:02Z INFO ActionManager] Finished getting action repository.
+[2024-06-03 02:10:02Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:02Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:02Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:02Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:02Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:02Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:02Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:02Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:02Z INFO ActionManager] Save archive 'https://api.github.com/repos/docker/login-action/zipball/465a07811f14bebb1938fbed4728c6a1ff8901fc' into D:\Temporal\Api-Calendario\actions-runner\_work\_actions\_temp_e523fffc-ca98-4d2f-8c43-8363fd6e3a9f\56a5ad28-092c-43d4-a304-546a031df695.zip.
+[2024-06-03 02:10:03Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'fb440901-e679-4d7a-ac6a-fa518182f4b1', success rate: 1/1.
+[2024-06-03 02:10:03Z INFO ActionManager] Request URL: https://api.github.com/repos/docker/login-action/zipball/465a07811f14bebb1938fbed4728c6a1ff8901fc X-GitHub-Request-Id: 05D7:128571:6C9FCA:A26658:665D25FB Http Status: OK
+[2024-06-03 02:10:04Z INFO ActionManager] Finished getting action repository.
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "output-definition",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "run-step",
+  "uses-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "boolean-steps-context",
+  "step-env",
+  "step-if",
+  "step-with"
+]
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2024-06-03 02:10:04Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:04Z INFO ActionManager] Load action that reference repository from 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions\actions\checkout\v2'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2024-06-03 02:10:04Z INFO ActionManager] Action pre node.js file: N/A.
+[2024-06-03 02:10:04Z INFO ActionManager] Action node.js file: dist/index.js.
+[2024-06-03 02:10:04Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Ignore action property author.
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Ignore action property branding.
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Docker Setup Buildx",
+  "description": "Set up Docker Buildx",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 10,
+          "col": 3,
+          "lit": "version"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 13,
+          "col": 3,
+          "lit": "driver"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 15,
+          "col": 14,
+          "lit": "docker-container"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 17,
+          "col": 3,
+          "lit": "driver-opts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 20,
+          "col": 3,
+          "lit": "buildkitd-flags"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 22,
+          "col": 14,
+          "lit": "--allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 24,
+          "col": 3,
+          "lit": "install"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 26,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 28,
+          "col": 3,
+          "lit": "use"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 30,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 32,
+          "col": 3,
+          "lit": "endpoint"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 35,
+          "col": 3,
+          "lit": "config"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 38,
+          "col": 3,
+          "lit": "config-inline"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2024-06-03 02:10:04Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:04Z INFO ActionManager] Load action that reference repository from 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions\docker\setup-buildx-action\v1'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Ignore action property author.
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Ignore action property branding.
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Docker Setup Buildx",
+  "description": "Set up Docker Buildx",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 10,
+          "col": 3,
+          "lit": "version"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 13,
+          "col": 3,
+          "lit": "driver"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 15,
+          "col": 14,
+          "lit": "docker-container"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 17,
+          "col": 3,
+          "lit": "driver-opts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 20,
+          "col": 3,
+          "lit": "buildkitd-flags"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 22,
+          "col": 14,
+          "lit": "--allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 24,
+          "col": 3,
+          "lit": "install"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 26,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 28,
+          "col": 3,
+          "lit": "use"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 30,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 32,
+          "col": 3,
+          "lit": "endpoint"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 35,
+          "col": 3,
+          "lit": "config"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 38,
+          "col": 3,
+          "lit": "config-inline"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2024-06-03 02:10:04Z INFO ActionManager] Action pre node.js file: N/A.
+[2024-06-03 02:10:04Z INFO ActionManager] Action node.js file: dist/index.js.
+[2024-06-03 02:10:04Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Ignore action property author.
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Ignore action property branding.
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Docker Login",
+  "description": "GitHub Action to login against a Docker registry",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 10,
+          "col": 3,
+          "lit": "registry"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 13,
+          "col": 3,
+          "lit": "username"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 16,
+          "col": 3,
+          "lit": "password"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 19,
+          "col": 3,
+          "lit": "ecr"
+        },
+        "value": {
+          "type": 0,
+          "file": 4,
+          "line": 21,
+          "col": 14,
+          "lit": "auto"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 23,
+          "col": 3,
+          "lit": "logout"
+        },
+        "value": {
+          "type": 0,
+          "file": 4,
+          "line": 25,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2024-06-03 02:10:04Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:04Z INFO ActionManager] Load action that reference repository from 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions\docker\login-action\v2'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Ignore action property author.
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Ignore action property branding.
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Docker Login",
+  "description": "GitHub Action to login against a Docker registry",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 10,
+          "col": 3,
+          "lit": "registry"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 13,
+          "col": 3,
+          "lit": "username"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 16,
+          "col": 3,
+          "lit": "password"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 19,
+          "col": 3,
+          "lit": "ecr"
+        },
+        "value": {
+          "type": 0,
+          "file": 4,
+          "line": 21,
+          "col": 14,
+          "lit": "auto"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 23,
+          "col": 3,
+          "lit": "logout"
+        },
+        "value": {
+          "type": 0,
+          "file": 4,
+          "line": 25,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2024-06-03 02:10:04Z INFO ActionManager] Action pre node.js file: N/A.
+[2024-06-03 02:10:04Z INFO ActionManager] Action node.js file: dist/index.js.
+[2024-06-03 02:10:04Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2024-06-03 02:10:04Z INFO JobExtension] Adding .
+[2024-06-03 02:10:04Z INFO JobExtension] Adding .
+[2024-06-03 02:10:04Z INFO JobExtension] Adding .
+[2024-06-03 02:10:04Z INFO JobExtension] Adding .
+[2024-06-03 02:10:04Z INFO JobExtension] Adding .
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Diag': 'D:\Temporal\Api-Calendario\actions-runner\_diag'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Diag': 'D:\Temporal\Api-Calendario\actions-runner\_diag'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Diag': 'D:\Temporal\Api-Calendario\actions-runner\_diag'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Diag': 'D:\Temporal\Api-Calendario\actions-runner\_diag'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Diag': 'D:\Temporal\Api-Calendario\actions-runner\_diag'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Diag': 'D:\Temporal\Api-Calendario\actions-runner\_diag'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Diag': 'D:\Temporal\Api-Calendario\actions-runner\_diag'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Diag': 'D:\Temporal\Api-Calendario\actions-runner\_diag'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Diag': 'D:\Temporal\Api-Calendario\actions-runner\_diag'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Diag': 'D:\Temporal\Api-Calendario\actions-runner\_diag'
+[2024-06-03 02:10:04Z INFO JobExtension] Total accessible running process: 272.
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:04Z INFO JobExtension] Start checking server connectivity.
+[2024-06-03 02:10:04Z INFO JobExtension] Check server connectivity for https://acghubeus0.actions.githubusercontent.com/_apis/health.
+[2024-06-03 02:10:04Z INFO JobExtension] Check server connectivity for https://results-receiver.actions.githubusercontent.com/health.
+[2024-06-03 02:10:04Z INFO JobExtension] Check server connectivity for https://actions-results-receiver-production.githubapp.com/health.
+[2024-06-03 02:10:04Z INFO JobExtension] Check server connectivity for https://pipelinesghubeus14.actions.githubusercontent.com/_apis/health.
+[2024-06-03 02:10:04Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "setup_job",
+  "type": "runner",
+  "stage": "Pre",
+  "stepId": "fb440901-e679-4d7a-ac6a-fa518182f4b1",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 5,
+  "startTime": "2024-06-03T02:09:59.7203286Z",
+  "finishTime": "2024-06-03T02:10:04.2635519Z"
+}.
+[2024-06-03 02:10:04Z INFO JobRunner] Total job steps: 5.
+[2024-06-03 02:10:04Z INFO JobRunner] Run all job steps.
+[2024-06-03 02:10:04Z INFO StepsRunner] Processing step: DisplayName='Checkout code'
+[2024-06-03 02:10:04Z INFO StepsRunner] Evaluating: success()
+[2024-06-03 02:10:04Z INFO StepsRunner] Result: true
+[2024-06-03 02:10:04Z INFO StepsRunner] Starting the step.
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:04Z INFO StepsRunner] Which2: 'chcp'
+[2024-06-03 02:10:04Z INFO StepsRunner] Location: 'C:\Windows\system32\chcp.COM'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper] Starting process:
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper]   File name: 'C:\Windows\system32\chcp.COM'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper]   Working directory: 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper] Process started with process id 7808, waiting for process exit.
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper] Finished process 7808 with exit code 0, and elapsed time 00:00:00.0139673.
+[2024-06-03 02:10:04Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2024-06-03 02:10:04Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'fb440901-e679-4d7a-ac6a-fa518182f4b1', success rate: 1/1.
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:04Z INFO ActionManager] Load action that reference repository from 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions\actions\checkout\v2'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2024-06-03 02:10:04Z INFO ActionManager] Action pre node.js file: N/A.
+[2024-06-03 02:10:04Z INFO ActionManager] Action node.js file: dist/index.js.
+[2024-06-03 02:10:04Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2024-06-03 02:10:04Z INFO ExecutionContext] Reserve record order 7 to 12 for post job actions.
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Diag': 'D:\Temporal\Api-Calendario\actions-runner\_diag'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Diag': 'D:\Temporal\Api-Calendario\actions-runner\_diag'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Temp': 'D:\Temporal\Api-Calendario\actions-runner\_work\_temp'
+[2024-06-03 02:10:04Z INFO ExecutionContext] Write event payload to D:\Temporal\Api-Calendario\actions-runner\_work\_temp\_github_workflow\event.json
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Temp': 'D:\Temporal\Api-Calendario\actions-runner\_work\_temp'
+[2024-06-03 02:10:04Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2024-06-03 02:10:04Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2024-06-03 02:10:04Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2024-06-03 02:10:04Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateStepSummaryCommand, Runner.Worker
+[2024-06-03 02:10:04Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateFileCommand, Runner.Worker
+[2024-06-03 02:10:04Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputFileCommand, Runner.Worker
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "***/Pipelines-Backend"
+}
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 50,
+  "col": 14,
+  "lit": "true"
+}
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 55,
+  "col": 14,
+  "lit": "true"
+}
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 58,
+  "col": 14,
+  "lit": "1"
+}
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 61,
+  "col": 14,
+  "lit": "false"
+}
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 70,
+  "col": 14,
+  "lit": "false"
+}
+[2024-06-03 02:10:04Z INFO ActionManifestManager] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "true"
+}
+[2024-06-03 02:10:04Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2024-06-03 02:10:04Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2024-06-03 02:10:04Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2024-06-03 02:10:04Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2024-06-03 02:10:04Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2024-06-03 02:10:04Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2024-06-03 02:10:04Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2024-06-03 02:10:04Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2024-06-03 02:10:04Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2024-06-03 02:10:04Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2024-06-03 02:10:04Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2024-06-03 02:10:04Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.NoticeCommandExtension, Runner.Worker
+[2024-06-03 02:10:04Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2024-06-03 02:10:04Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2024-06-03 02:10:04Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2024-06-03 02:10:04Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2024-06-03 02:10:04Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2024-06-03 02:10:04Z INFO ActionCommandManager] Register action command extension for command set-env
+[2024-06-03 02:10:04Z INFO ActionCommandManager] Register action command extension for command set-output
+[2024-06-03 02:10:04Z INFO ActionCommandManager] Register action command extension for command save-state
+[2024-06-03 02:10:04Z INFO ActionCommandManager] Register action command extension for command add-path
+[2024-06-03 02:10:04Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2024-06-03 02:10:04Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2024-06-03 02:10:04Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2024-06-03 02:10:04Z INFO ActionCommandManager] Register action command extension for command warning
+[2024-06-03 02:10:04Z INFO ActionCommandManager] Register action command extension for command error
+[2024-06-03 02:10:04Z INFO ActionCommandManager] Register action command extension for command notice
+[2024-06-03 02:10:04Z INFO ActionCommandManager] Register action command extension for command debug
+[2024-06-03 02:10:04Z INFO ActionCommandManager] Register action command extension for command group
+[2024-06-03 02:10:04Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2024-06-03 02:10:04Z INFO ActionCommandManager] Register action command extension for command echo
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:04Z INFO HostContext] Well known directory 'Externals': 'D:\Temporal\Api-Calendario\actions-runner\externals'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper] Starting process:
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper]   File name: 'D:\Temporal\Api-Calendario\actions-runner\externals\node16\bin\node.exe'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper]   Arguments: '"D:\Temporal\Api-Calendario\actions-runner\_work\_actions\actions\checkout\v2\dist/index.js"'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper]   Working directory: 'D:\Temporal\Api-Calendario\actions-runner\_work\Pipelines-Backend\Pipelines-Backend'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2024-06-03 02:10:04Z INFO ProcessInvokerWrapper] Process started with process id 11284, waiting for process exit.
+[2024-06-03 02:10:04Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'a60052d4-79a0-5821-3eeb-84adb9872c5b', success rate: 1/1.
+[2024-06-03 02:10:04Z INFO JobServerQueue] Got a step log file to send to results service.
+[2024-06-03 02:10:04Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\Temporal\Api-Calendario\actions-runner\_diag\blocks\9e659085-acea-4adb-a24b-a226948421c9_fb440901-e679-4d7a-ac6a-fa518182f4b1.1
+[2024-06-03 02:10:04Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2024-06-03 02:10:05Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2024-06-03 02:10:05Z INFO AddMaskCommandExtension] Add new secret mask with length of 76
+[2024-06-03 02:10:05Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'a60052d4-79a0-5821-3eeb-84adb9872c5b', success rate: 1/1.
+[2024-06-03 02:10:06Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'a60052d4-79a0-5821-3eeb-84adb9872c5b', success rate: 1/1.
+[2024-06-03 02:10:06Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'a60052d4-79a0-5821-3eeb-84adb9872c5b', success rate: 1/1.
+[2024-06-03 02:10:06Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'a60052d4-79a0-5821-3eeb-84adb9872c5b', success rate: 1/1.
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper] Finished process 11284 with exit code 1, and elapsed time 00:00:02.7416535.
+[2024-06-03 02:10:07Z INFO CreateStepSummaryCommand] Step Summary file (D:\Temporal\Api-Calendario\actions-runner\_work\_temp\_runner_file_commands\step_summary_c4ba0fb4-ca44-41e0-a8e8-b9f2f4f883a3) is empty; skipping attachment upload
+[2024-06-03 02:10:07Z INFO StepsRunner] Step result: Failed
+[2024-06-03 02:10:07Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v2",
+  "type": "node16",
+  "stage": "Main",
+  "stepId": "a60052d4-79a0-5821-3eeb-84adb9872c5b",
+  "stepContextName": "__actions_checkout",
+  "hasPreStep": false,
+  "hasPostStep": true,
+  "result": "failed",
+  "errorMessages": [
+    "No url found for submodule path 'actions-runner/_work/Pipelines-Backend/Pipelines-Backend' in .gitmodules",
+    "The process 'C:\\Program Files\\Git\\cmd\\git.exe' failed with exit code 128"
+  ],
+  "executionTimeInSeconds": 3,
+  "startTime": "2024-06-03T02:10:04.2851563Z",
+  "finishTime": "2024-06-03T02:10:07.155127Z"
+}.
+[2024-06-03 02:10:07Z INFO StepsRunner] Update job result with current step result 'Failed'.
+[2024-06-03 02:10:07Z INFO StepsRunner] Current state: job state = 'Failed'
+[2024-06-03 02:10:07Z INFO StepsRunner] Processing step: DisplayName='Set up Docker Buildx'
+[2024-06-03 02:10:07Z INFO StepsRunner] Evaluating: success()
+[2024-06-03 02:10:07Z INFO StepsRunner] Result: false
+[2024-06-03 02:10:07Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2024-06-03 02:10:07Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2024-06-03 02:10:07Z INFO StepsRunner] Current state: job state = 'Failed'
+[2024-06-03 02:10:07Z INFO StepsRunner] Processing step: DisplayName='Log in to DockerHub'
+[2024-06-03 02:10:07Z INFO StepsRunner] Evaluating: success()
+[2024-06-03 02:10:07Z INFO StepsRunner] Result: false
+[2024-06-03 02:10:07Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2024-06-03 02:10:07Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2024-06-03 02:10:07Z INFO StepsRunner] Current state: job state = 'Failed'
+[2024-06-03 02:10:07Z INFO StepsRunner] Processing step: DisplayName='Run Docker Compose'
+[2024-06-03 02:10:07Z INFO StepsRunner] Evaluating: success()
+[2024-06-03 02:10:07Z INFO StepsRunner] Result: false
+[2024-06-03 02:10:07Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2024-06-03 02:10:07Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2024-06-03 02:10:07Z INFO StepsRunner] Current state: job state = 'Failed'
+[2024-06-03 02:10:07Z INFO StepsRunner] Processing step: DisplayName='Check Docker Containers'
+[2024-06-03 02:10:07Z INFO StepsRunner] Evaluating: success()
+[2024-06-03 02:10:07Z INFO StepsRunner] Result: false
+[2024-06-03 02:10:07Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2024-06-03 02:10:07Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2024-06-03 02:10:07Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'a60052d4-79a0-5821-3eeb-84adb9872c5b', success rate: 1/1.
+[2024-06-03 02:10:07Z INFO StepsRunner] Current state: job state = 'Failed'
+[2024-06-03 02:10:07Z INFO StepsRunner] Processing step: DisplayName='Post Checkout code'
+[2024-06-03 02:10:07Z INFO StepsRunner] Evaluating: always()
+[2024-06-03 02:10:07Z INFO StepsRunner] Result: true
+[2024-06-03 02:10:07Z INFO StepsRunner] Starting the step.
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:07Z INFO StepsRunner] Which2: 'chcp'
+[2024-06-03 02:10:07Z INFO StepsRunner] Location: 'C:\Windows\system32\chcp.COM'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper] Starting process:
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper]   File name: 'C:\Windows\system32\chcp.COM'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper]   Working directory: 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper] Process started with process id 13180, waiting for process exit.
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper] Finished process 13180 with exit code 0, and elapsed time 00:00:00.0118964.
+[2024-06-03 02:10:07Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:07Z INFO ActionManager] Load action that reference repository from 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions\actions\checkout\v2'
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Actions': 'D:\Temporal\Api-Calendario\actions-runner\_work\_actions'
+[2024-06-03 02:10:07Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2024-06-03 02:10:07Z INFO ActionManager] Action pre node.js file: N/A.
+[2024-06-03 02:10:07Z INFO ActionManager] Action node.js file: dist/index.js.
+[2024-06-03 02:10:07Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Temp': 'D:\Temporal\Api-Calendario\actions-runner\_work\_temp'
+[2024-06-03 02:10:07Z INFO ExecutionContext] Write event payload to D:\Temporal\Api-Calendario\actions-runner\_work\_temp\_github_workflow\event.json
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Work': 'D:\Temporal\Api-Calendario\actions-runner\_work'
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Temp': 'D:\Temporal\Api-Calendario\actions-runner\_work\_temp'
+[2024-06-03 02:10:07Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2024-06-03 02:10:07Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "***/Pipelines-Backend"
+}
+[2024-06-03 02:10:07Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2024-06-03 02:10:07Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2024-06-03 02:10:07Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2024-06-03 02:10:07Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2024-06-03 02:10:07Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2024-06-03 02:10:07Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 50,
+  "col": 14,
+  "lit": "true"
+}
+[2024-06-03 02:10:07Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2024-06-03 02:10:07Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 55,
+  "col": 14,
+  "lit": "true"
+}
+[2024-06-03 02:10:07Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 58,
+  "col": 14,
+  "lit": "1"
+}
+[2024-06-03 02:10:07Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 61,
+  "col": 14,
+  "lit": "false"
+}
+[2024-06-03 02:10:07Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 70,
+  "col": 14,
+  "lit": "false"
+}
+[2024-06-03 02:10:07Z INFO ActionManifestManager] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "true"
+}
+[2024-06-03 02:10:07Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2024-06-03 02:10:07Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2024-06-03 02:10:07Z INFO ActionCommandManager] Register action command extension for command set-env
+[2024-06-03 02:10:07Z INFO ActionCommandManager] Register action command extension for command set-output
+[2024-06-03 02:10:07Z INFO ActionCommandManager] Register action command extension for command save-state
+[2024-06-03 02:10:07Z INFO ActionCommandManager] Register action command extension for command add-path
+[2024-06-03 02:10:07Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2024-06-03 02:10:07Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2024-06-03 02:10:07Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2024-06-03 02:10:07Z INFO ActionCommandManager] Register action command extension for command warning
+[2024-06-03 02:10:07Z INFO ActionCommandManager] Register action command extension for command error
+[2024-06-03 02:10:07Z INFO ActionCommandManager] Register action command extension for command notice
+[2024-06-03 02:10:07Z INFO ActionCommandManager] Register action command extension for command debug
+[2024-06-03 02:10:07Z INFO ActionCommandManager] Register action command extension for command group
+[2024-06-03 02:10:07Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2024-06-03 02:10:07Z INFO ActionCommandManager] Register action command extension for command echo
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:07Z INFO HostContext] Well known directory 'Externals': 'D:\Temporal\Api-Calendario\actions-runner\externals'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper] Starting process:
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper]   File name: 'D:\Temporal\Api-Calendario\actions-runner\externals\node16\bin\node.exe'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper]   Arguments: '"D:\Temporal\Api-Calendario\actions-runner\_work\_actions\actions\checkout\v2\dist/index.js"'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper]   Working directory: 'D:\Temporal\Api-Calendario\actions-runner\_work\Pipelines-Backend\Pipelines-Backend'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2024-06-03 02:10:07Z INFO ProcessInvokerWrapper] Process started with process id 10932, waiting for process exit.
+[2024-06-03 02:10:07Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ebb1c856-c7a9-40df-a245-b043e1a0caca', success rate: 1/1.
+[2024-06-03 02:10:07Z INFO JobServerQueue] Got a step log file to send to results service.
+[2024-06-03 02:10:07Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\Temporal\Api-Calendario\actions-runner\_diag\blocks\9e659085-acea-4adb-a24b-a226948421c9_a60052d4-79a0-5821-3eeb-84adb9872c5b.1
+[2024-06-03 02:10:08Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2024-06-03 02:10:08Z INFO AddMaskCommandExtension] Add new secret mask with length of 32
+[2024-06-03 02:10:08Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2024-06-03 02:10:08Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ebb1c856-c7a9-40df-a245-b043e1a0caca', success rate: 1/1.
+[2024-06-03 02:10:08Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ebb1c856-c7a9-40df-a245-b043e1a0caca', success rate: 1/1.
+[2024-06-03 02:10:08Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-06-03 02:10:08Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-06-03 02:10:08Z INFO ProcessInvokerWrapper] Finished process 10932 with exit code 0, and elapsed time 00:00:01.7935087.
+[2024-06-03 02:10:08Z INFO CreateStepSummaryCommand] Step Summary file (D:\Temporal\Api-Calendario\actions-runner\_work\_temp\_runner_file_commands\step_summary_e7019bb2-2ece-4d2a-826a-1b5836f6a331) is empty; skipping attachment upload
+[2024-06-03 02:10:08Z INFO StepsRunner] Step result: 
+[2024-06-03 02:10:08Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v2",
+  "type": "node16",
+  "stage": "Post",
+  "stepId": "ebb1c856-c7a9-40df-a245-b043e1a0caca",
+  "result": "succeeded",
+  "errorMessages": [
+    "The process 'C:\\Program Files\\Git\\cmd\\git.exe' failed with exit code 128"
+  ],
+  "executionTimeInSeconds": 2,
+  "startTime": "2024-06-03T02:10:07.1618186Z",
+  "finishTime": "2024-06-03T02:10:08.9826381Z"
+}.
+[2024-06-03 02:10:08Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2024-06-03 02:10:08Z INFO StepsRunner] Current state: job state = 'Failed'
+[2024-06-03 02:10:08Z INFO JobRunner] Finalize job.
+[2024-06-03 02:10:09Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:09Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:09Z INFO HostContext] Well known directory 'Diag': 'D:\Temporal\Api-Calendario\actions-runner\_diag'
+[2024-06-03 02:10:09Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:09Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:09Z INFO HostContext] Well known directory 'Diag': 'D:\Temporal\Api-Calendario\actions-runner\_diag'
+[2024-06-03 02:10:09Z INFO JobExtension] Initialize Env context
+[2024-06-03 02:10:09Z INFO JobExtension] Initialize steps context
+[2024-06-03 02:10:09Z INFO JobExtension] Total accessible running process: 272.
+[2024-06-03 02:10:09Z INFO JobExtension] Wait for all connectivity checks to finish.
+[2024-06-03 02:10:09Z INFO JobExtension] Connectivity check result: https://acghubeus0.actions.githubusercontent.com/_apis/health: OK
+[2024-06-03 02:10:09Z INFO JobExtension] Connectivity check result: https://results-receiver.actions.githubusercontent.com/health: OK
+[2024-06-03 02:10:09Z INFO JobExtension] Connectivity check result: https://actions-results-receiver-production.githubapp.com/health: OK
+[2024-06-03 02:10:09Z INFO JobExtension] Connectivity check result: https://pipelinesghubeus14.actions.githubusercontent.com/_apis/health: OK
+[2024-06-03 02:10:09Z INFO JobServerQueue] Got a step log file to send to results service.
+[2024-06-03 02:10:09Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\Temporal\Api-Calendario\actions-runner\_diag\blocks\9e659085-acea-4adb-a24b-a226948421c9_ebb1c856-c7a9-40df-a245-b043e1a0caca.1
+[2024-06-03 02:10:09Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "complete_job",
+  "type": "runner",
+  "stage": "Post",
+  "stepId": "ef2aee15-8ac8-4dad-970a-e8c9608dddca",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2024-06-03T02:10:09.0102325Z",
+  "finishTime": "2024-06-03T02:10:09.0204741Z"
+}.
+[2024-06-03 02:10:09Z INFO JobRunner] Job result after all job steps finish: Failed
+[2024-06-03 02:10:09Z INFO JobRunner] Completing the job execution context.
+[2024-06-03 02:10:09Z INFO JobRunner] Shutting down the job server queue.
+[2024-06-03 02:10:09Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2024-06-03 02:10:09Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2024-06-03 02:10:10Z INFO JobServerQueue] All queue process task stopped.
+[2024-06-03 02:10:10Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ebb1c856-c7a9-40df-a245-b043e1a0caca', success rate: 1/1.
+[2024-06-03 02:10:10Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ef2aee15-8ac8-4dad-970a-e8c9608dddca', success rate: 1/1.
+[2024-06-03 02:10:10Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ca395085-040a-526b-2ce8-bdc85f692774', success rate: 1/1.
+[2024-06-03 02:10:10Z INFO JobServerQueue] Web console line queue drained.
+[2024-06-03 02:10:10Z INFO JobServerQueue] Uploading 3 files in one shot.
+[2024-06-03 02:10:11Z INFO JobServerQueue] Try to upload 3 log files or attachments, success rate: 3/3.
+[2024-06-03 02:10:11Z INFO JobServerQueue] File upload queue drained.
+[2024-06-03 02:10:11Z INFO JobServerQueue] Starting results-based upload queue...
+[2024-06-03 02:10:11Z INFO JobServerQueue] Uploading 2 file(s) in one shot through results service.
+[2024-06-03 02:10:11Z INFO JobServerQueue] Got a step log file to send to results service.
+[2024-06-03 02:10:11Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\Temporal\Api-Calendario\actions-runner\_diag\blocks\9e659085-acea-4adb-a24b-a226948421c9_ef2aee15-8ac8-4dad-970a-e8c9608dddca.1
+[2024-06-03 02:10:11Z INFO JobServerQueue] Got a job log file to send to results service.
+[2024-06-03 02:10:11Z INFO JobServerQueue] Starting upload of job log file to results service ResultsLog, D:\Temporal\Api-Calendario\actions-runner\_diag\blocks\9e659085-acea-4adb-a24b-a226948421c9_ca395085-040a-526b-2ce8-bdc85f692774.1
+[2024-06-03 02:10:11Z INFO JobServerQueue] Tried to upload 2 file(s) to results, success rate: 2/2.
+[2024-06-03 02:10:11Z INFO JobServerQueue] Results upload queue drained.
+[2024-06-03 02:10:11Z INFO JobServerQueue] Timeline update queue drained.
+[2024-06-03 02:10:11Z INFO JobServerQueue] Disposing job server ...
+[2024-06-03 02:10:11Z INFO JobServerQueue] Disposing results server ...
+[2024-06-03 02:10:11Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2024-06-03 02:10:11Z INFO JobServerQueue] Actions upload time: 1301 ms, Result upload time: 2243 ms
+[2024-06-03 02:10:11Z INFO TempDirectoryManager] Cleaning runner temp folder: D:\Temporal\Api-Calendario\actions-runner\_work\_temp
+[2024-06-03 02:10:11Z INFO HostContext] Well known directory 'Bin': 'D:\Temporal\Api-Calendario\actions-runner\bin'
+[2024-06-03 02:10:11Z INFO HostContext] Well known directory 'Root': 'D:\Temporal\Api-Calendario\actions-runner'
+[2024-06-03 02:10:11Z INFO HostContext] Well known directory 'Diag': 'D:\Temporal\Api-Calendario\actions-runner\_diag'
+[2024-06-03 02:10:11Z INFO HostContext] Well known config file 'Telemetry': 'D:\Temporal\Api-Calendario\actions-runner\_diag\.telemetry'
+[2024-06-03 02:10:11Z INFO JobRunner] Raising job completed event
+[2024-06-03 02:10:12Z INFO Worker] Job completed.
