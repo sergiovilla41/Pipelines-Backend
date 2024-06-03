@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted  # Utiliza el runner auto-hospedado (local)
 
     services:
       docker:
@@ -34,12 +34,12 @@ jobs:
 
     - name: Build and push Docker images
       run: |
-        docker-compose -f ../../docker-compose.yml build
-        docker-compose -f ../../docker-compose.yml push
+        docker-compose -f docker-compose.yml build
+        docker-compose -f docker-compose.yml push
 
     - name: Run Docker Compose
       run: |
-        docker-compose -f ../../docker-compose.yml up -d
+        docker-compose -f docker-compose.yml up -d
 
     - name: Check Docker Containers
       run: |
