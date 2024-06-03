@@ -45,7 +45,7 @@ services:
       context: ./apidiaslaborales 
       dockerfile: Dockerfile-postgres 
     ports:
-      - "5543:5432"
+      - "5432:5432"
     networks:
       - redcalendario
     environment:
